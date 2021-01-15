@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="../style/style.css" />
+    <title>films</title>
+  </head>
+  <body>
+    <section class="menu">
+      <nav>
+        <ul>
+          <li class="films">Films library</li>
+          <li class="add__films">
+            <img class="add__img" src="../img/+.png" alt="add" />
+            <img class="add__img2" src="../img/-.png" alt="add" /> Add new film
+          </li>
+        </ul>
+      </nav>
+    </section>
+    <section style="display: none;" class="add__card__film">
+      <form autocomplete="on" class="block__add">
+        <label for="input">Title</label>
+        <input required class="input title__val" name="title" type="text" />
+
+        <label for="input">year</label>
+        <input required class="input year" name="title" type="text" />
+
+        <label for="input ">country</label>
+        <input class="input country" name="title" type="text" />
+
+        <label for="input">genre</label>
+        <input class="input genre" name="title" type="text" />
+
+        <label for="input">poster (link)</label>
+        <input class="input poster" name="title" type="text" />
+
+        <label for="input">actors</label>
+        <input class="input actors" name="title" type="text" />
+
+        <label for="input ">description</label>
+        <textarea
+          class="input desc"
+          name="add__film"
+          id=""
+          cols="30"
+          rows="10"
+        ></textarea>
+        <div class="create__block">
+          <button type="submit" class="btn__cansel btn">Cansel</button>
+          <button type="submit"  class="btn__add btn">Add</button>
+          <button type="submit"  class="btn__edit__film btn">Edit</button>
+        </div>
+      </form>
+    </section>
+
+    <section class="container">
+      <div class="wrapper__film">
+        <div class="card__film">
+          <img class="img__poster" src="../img/Layer 9.png" alt="" />
+          <div class="card__descripton">
+            <h1>Martian</h1>
+            <p class="dsc__film">
+              Mars mission Ares-2 in the process was forced to urgently leave the
+              planet because of the impending sandstorm. Engineer and Biolog mark
+              Watney suffered an injury suit during a sand storm. The
+              mission,considering him dead...
+            </p>
+            <div class="dsc__block ">
+              <p class="dsc__name">Country</p>
+              <div class="wrapp">
+                  <p class="dsc__text dsc__country">USA</p>
+              </div>
+              
+            </div>
+            <div class="dsc__block">
+              <p class="dsc__name">Year</p>
+              <div class="wrapp"> <p class="dsc__text dsc__year">2016</p></div>
+             
+            </div>
+            <div class="dsc__block">
+              <p class="dsc__name">genre</p>
+              <div class="wrapp"> <p class="dsc__text dsc__genre">Fantasy</p></div>
+             
+            </div>
+            <div class="dsc__block width__custom">
+              <p class="dsc__name">actors</p>
+              <p class="dsc__text  wrapp__custom">
+                  <span class="desktop dsc__actors">Aksel Hennie...</span>
+                  <span class="mobile dsc__actors2"
+                  >Aksel Hennie, Chiwetel Ejiofor, Jeff Daniels, Jessica Chastain, Kate Mara, Kristen Wiig, Matt Damon, Michael Peña, Sean Bean, Sebastian Stan
+                  </span>
+              </p>
+            </div>
+            <button class="btn__delete btn__onecklick btn">Delete</button>
+            <button class="btn__edit btn">Edit</button>
+          </div>
+        </div>
+        <div class="comments__block">
+          <div class="d-flex-m all__comment">
+            <p class="comments__count">Comments: <span class="count">3</span></p>
+            <img class="show arrow_show" src="../img/ar-u.png" alt="" />
+            <img class="hide arrow_hide" src="../img/d.png" alt="" />
+          </div>
+          <div class="comments">
+            <div class="border"></div>
+            <p class="comment">Test comment 1</p>
+            <div class="border"></div>
+            <p class="comment">Test comment 1</p>
+            <textarea
+            class="textarea"
+            placeholder="Add your comment"
+            name=""
+            id=""
+            cols="30"
+            rows="10"
+          ></textarea>
+          <button class="btn btn__add add__comm mb">Add</button>
+          </div>
+        </div>
+      </div>
+
+    </section>
+
+    <script src="./main.js"></script>
+  </body>
+</html>
