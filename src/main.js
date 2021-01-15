@@ -40,13 +40,24 @@ window.addEventListener("DOMContentLoaded", function () {
   function togle() {
     formNewFilm.style.display = formNewFilm.style.display == "none" ? "block" : "none";
     !addFilm.classList.contains("active") ? addFilm.classList.add("active") : addFilm.classList.remove("active");
-
+    !addFilm.classList.contains("opacity") ? addFilm.classList.add("opacity") : addFilm.classList.remove("opacity");
     if (formNewFilm.style.display == "block") {addChange.style.display = "none"; add.style.display = "block";}
     allForms.reset();
   }
 
   function changeImg() {
-    !addFilm.classList.contains("active") ? addFilm.classList.add("active") : addFilm.classList.remove("active");
+    if(formNewFilm.style.display == "block" ){
+      addFilm.classList.remove("active")
+      addFilm.classList.remove("opacity")
+    }
+    if(formNewFilm.style.display == "none"){
+      addFilm.classList.add("active")
+      addFilm.classList.add("opacity")
+    }
+    
+    
+    // !addFilm.classList.contains("active") ? addFilm.classList.add("active") : addFilm.classList.remove("active");
+    // !addFilm.classList.contains("opacity") ? addFilm.classList.add("opacity") : addFilm.classList.remove("opacity");
   }
 
   function ScrollUp() {
@@ -153,7 +164,9 @@ window.addEventListener("DOMContentLoaded", function () {
       mainContainer.innerHTML = ''
       saveCardFilms()
       formNewFilm.style.display = 'none'
-      changeImg()
+      addFilm.classList.remove("active")
+      addFilm.classList.remove("opacity")
+      
     }else{
       alert("Для изменения необходимо правильно заполнить все формы")
     }
@@ -189,7 +202,8 @@ window.addEventListener("DOMContentLoaded", function () {
       store()
       mainContainer.innerHTML = ""
       formNewFilm.style.display = 'none'
-      changeImg()
+      addFilm.classList.remove("active")
+      addFilm.classList.remove("opacity")
       saveCardFilms()
     }else{
         alert("Для добавления необходимо правильно заполнить все формы")
@@ -202,6 +216,7 @@ window.addEventListener("DOMContentLoaded", function () {
 
   ////////render films
   function saveCardFilms() {
+    
     arrayFilms = JSON.parse(localStorage.getItem('films'))
     if (arrayFilms) {
       mainContainer.innerHTML = ''
@@ -242,15 +257,15 @@ window.addEventListener("DOMContentLoaded", function () {
                           <span class="mobile dsc__actors2">${el.actors}</span>
                       </p>
                   </div>
-                  <button data-id=${el.id} class="btn__delete btn">Delete</button>
-                  <button data-id=${el.id} class="btn__edit btn">Edit</button>
+                  <button data-id=${el.id} class="btn__delete mt-10 btn">Delete</button>
+                  <button data-id=${el.id} class="btn__edit mt-10 btn">Edit</button>
                   </div>
               </div>
               <div class="comments__block">
                   <div class="d-flex-m all__comment">
                   <p data-id=${el.id} class="comments__count">Comments: <span class="count">${el.countComments}</span> </p>
-                  <img class="show arrow_show" src="../img/ar-u.png" alt="" />
-                  <img class="hide arrow_hide" src="../img/d.png" alt="" />
+                  <img class="show arrow_show" src="./img/ar-u.png" alt="" />
+                  <img class="hide arrow_hide" src="./img/d.png" alt="" />
                   </div>
                   <div class="comments">
                   <div class="newcomm"> ${el.comments}</div>
@@ -280,7 +295,7 @@ window.addEventListener("DOMContentLoaded", function () {
       year: "2016",
       country: "USA",
       genre: "Fantasy",
-      poster: "../img/Layer 9.png",
+      poster: "./img/Layer 9.png",
       actors: "Aksel Hennie, Chiwetel Ejiofor, Jeff Daniels, Jessica Chastain, Kate Mara, Kristen Wiig, Matt Damon, Michael Peña, Sean Bean, Sebastian Stan",
       desc: " Mars mission Ares-2 in the process was forced to urgently leave the planet because of the impending sandstorm. Engineer and Biolog mark Watney suffered an injury suit during a sand storm. The mission,considering him dead...",
       id: getRandomID(0, 1679615),

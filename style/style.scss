@@ -28,10 +28,12 @@ margin: 0;
     background-color: #6fcdff;
     display: flex;
     align-items: center;
+    font-family: 'Open Sans', sans-serif; 
     
 }
 .films{
     background-color: #51afe1;
+    font-weight: 400;
 }
 
 .add__img{
@@ -198,7 +200,7 @@ box-shadow: 0px 5px 7px -1px #6ecdfd;
   margin-top: 30px;
   margin-bottom: 20px;
     font-weight: 700;
-   
+   font-size: 14px;
     text-transform: uppercase;
 }
 
@@ -225,6 +227,9 @@ box-shadow: 0px 5px 7px -1px #6ecdfd;
 
 .active .add__img{
     display: none;
+}
+.menu .opacity{
+    color: #ffffff82;
 }
 
 .active .add__img2{
@@ -300,11 +305,19 @@ flex-direction: initial;
     width: 59%;
 }
 
+.card__descripton h1{
+    font-size: 36px;
+    margin-top: 0;
+}
+
 .btn{
     width: 150px;
     margin-right: 15px;
 }
 
+.mt-10{
+    margin-top: 10px;
+}
 .d-flex{
     display: flex;
 }
@@ -353,7 +366,13 @@ flex-direction: initial;
 
 .dsc__block{
     width: 50%;
+    color: #e4edf4;
 }
+
+.dsc__film{
+    color: #e4edf4;
+}
+
 
 .width__custom{
     width: 100%;
